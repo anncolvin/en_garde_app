@@ -1,0 +1,34 @@
+
+<% if !@fencer.name.nil? %>
+  <div class="small-12 columns" id="fencer_name">
+ <%= @fencer.name %>
+  </div>
+<% end %>
+
+<% if !@fencer.avatar.nil? %>
+  <div class="small-12 columns" id="fencer_avatar">
+ <%= @fencer.avatar %>
+  </div>
+<% end %>
+
+  <% if !@fencer.dominant_hand.nil? %>
+    <div class="small-12 columns" id="fencer_hand">
+      Dominant Hand: <%= @fencer.dominant_hand %>
+    </div>
+  <% end %>
+
+  <% if !@fencer.category.nil? %>
+    <div class="small-12 columns" id="fencer_category">
+      Category: <%= @fencer.category %>
+    </div>
+  <% end %>
+
+  <% if !@fencer.notes.nil? %>
+    <div class="small-12 columns" id="fencer_notes">
+      Notes: <%= @fencer.notes %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= button_to "Delete Fencer", @fencer, class: "button purple-button margin-book-info", method: :delete %>
+  </div>

@@ -1,0 +1,36 @@
+<%= form_for @fencer do |f| %>
+  <div class="required_field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="non_required_field">
+    <%= f.label :dominant_hand %>
+    <%= f.text_field :dominant_hand %>
+  </div>
+
+  <div class="non_required_field">
+    <%= f.label :category %>
+    <%= f.select(:category, options_for_select(@categories_collection), { :include_blank=>true, :prompt =>  'Category' }) %>
+  </div>
+
+  <div class="non_required_field">
+    <%= f.label :letter_rating, "Letter Rating" %>
+    <%= f.text_field :letter_rating %>
+  </div>
+
+  <div class="non_required_field">
+    <%= f.label :profile_photo, "Profile Photo" %>
+    <%= f.file_field :profile_photo %>
+  </div>
+
+  <div class="non_required_field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div>
+    <%= f.submit "Submit Fencer" %>
+  </div>
+
+<% end %>

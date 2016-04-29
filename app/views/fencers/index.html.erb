@@ -1,0 +1,10 @@
+<% @sfencers = @fencers.sort_by { |f| f.name } %>
+<% @sfencers.each do | fencer |%>
+  <div class="small-6 medium-4 large-2 end columns media-object">
+    <div class="media-object-section">
+      <a href="/fencers/<%= fencer.id %>"> <img class="thumbnail" src="<%= fencer.profile_photo %>" style="width: 125px; height: 175px"></a>
+      <center><h5><%= link_to fencer.name, fencer_path(fencer) %></h5></center>
+    </div>
+  </div>
+  <% end %>
+  <div class="">

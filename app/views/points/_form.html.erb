@@ -1,0 +1,22 @@
+<%= form_for [@bout, @point] do |f| %>
+
+  <div class="non_required_field">
+    <%= f.label :status %>
+    <%= f.select(:status, options_for_select(@statuses_collection), { :include_blank=>true, :prompt =>  'Status' }) %>
+  </div>
+
+  <div class="non_required_field">
+    <%= f.label :reason_category %>
+    <%= f.select(:reason_category, options_for_select(@reasoncategories_collection), { :include_blank=>true, :prompt =>  'Reason Category' }) %>
+  </div>
+  
+  <div class="non_required_field">
+    <%= f.label :reason %>
+    <%= f.select(:reason, options_for_select(@reasons_collection), { :include_blank=>true, :prompt =>  'Reason' }) %>
+  </div>
+
+  <div>
+    <%= f.submit "Submit Point" %>
+  </div>
+
+<% end %>

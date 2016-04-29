@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Bookstore+Awesome%2C+Boston%2C+Massachusetts+was+just+added%21+Check+it+out+at+literalist.herokuapp.com%2Fbookstores%2F26
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="<TWITTER_API_KEY>", oauth_nonce="cb6205dc49dab42c4d98572311103498",
+        oauth_signature="ceVDYJbGnF7iYgN7qKuZGjTWq5k%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1460422978", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Authorization Required
+    headers:
+      Content-Length:
+      - '89'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 12 Apr 2016 01:02:59 GMT
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A146042297911227078; Domain=.twitter.com; Path=/; Expires=Thu,
+        12-Apr-2018 01:02:59 UTC
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - d90e73bed2cae91e48e0c3207660b142
+      X-Response-Time:
+      - '7'
+      X-Tsa-Request-Body-Time:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":32,"message":"Could not authenticate you."}]}'
+    http_version: 
+  recorded_at: Tue, 12 Apr 2016 01:02:59 GMT
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=UTF-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '119'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 12 Apr 2016 20:07:42 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Tue, 12 Apr 2016 20:07:42 GMT
+      Ml:
+      - A
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_b
+      Set-Cookie:
+      - guest_id=v1%3A146049166293649522; Domain=.twitter.com; Path=/; Expires=Thu,
+        12-Apr-2018 20:07:42 UTC
+      Status:
+      - 403 Forbidden
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - e09e49d3a64ba8e6b59db3d44b98e490
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Response-Time:
+      - '6'
+      X-Transaction:
+      - 01d352de8e6a3850
+      X-Tsa-Request-Body-Time:
+      - '1'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":99,"message":"Unable to verify your credentials","label":"authenticity_token_error"}]}'
+    http_version: 
+  recorded_at: Tue, 12 Apr 2016 20:07:43 GMT
+recorded_with: VCR 3.0.1

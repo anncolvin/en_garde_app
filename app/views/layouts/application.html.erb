@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "En Garde!" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <div class="top-bar">
+    <div class="top-bar-left small-12 columns">
+      <div class="header-text" id="header-text">
+      <% if user_signed_in?%>
+      <div class="tag-button"> <div class='resize'>
+        <center><font size="6"><b>En Guarde! </font><br>
+        <font size="2"><i>“Performance insights. Targeted results.”</i><b></font></center>
+    </div></div>
+        <% else%>
+
+          <% end%>
+      </div>
+    </div
+    <div class="submenu menu vertical">
+
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+      <!-- <div class="top-bar-left small-12 columns">
+
+        </div>
+      </div> -->
+      <div class="top-bar-right" id="right-side">
+          <% if current_user %>
+          </li>
+          <% end %>
+          <ul class="has-submenu">
+
+            <ul class="submenu menu vertical" data-submenu>
+              <% if !user_signed_in?%>
+              <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/en_garde_app">
+          </a>
+                <%= link_to "Sign Up", new_user_registration_path %>
+                <%= link_to "Sign In", new_user_session_path %>
+
+              <% else%>
+              <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/en_garde_app">
+          </a>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+
+                <%= link_to "Update Profile", edit_user_registration_path %>
+
+              <% end %>
+
+            </ul>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="row small-12 medium-6 columns" id="search-bar-div">
+    <div id="search-input">
+      <%= form_tag(fencers_path, method: 'get', id: "search_bar") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "find fencers!", type: "search" %>
+        <div id="search-button">
+          <%= submit_tag "Search", name: nil, class: "button" %>
+        </div>
+      <% end %>
+    </div>
+  </div> -->
+  <!-- <div class="row small-12 medium-6 columns" id="twitter-button"   data-size="small" >
+    <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/en_garde_app">
+Follow @en_garde_app</a>
+</div> -->
+
+  <div class="notices small-12 columns" id="flash-notices">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <%= content_tag :div, msg, :class => "flash_#{name}" %>
+      <% end %>
+    <% end %>
+  </div>
+
+</head>
+<body>
+  <!-- <div class="small-12 columns"> -->
+
+
+  <%= yield %>
+    </div>
+</body>
+</html>

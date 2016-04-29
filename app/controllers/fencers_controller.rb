@@ -33,6 +33,7 @@ class FencersController < ApplicationController
 
   def edit
     @fencer = Fencer.find(params[:id])
+    @categories_collection = Fencer::CATEGORIES
   end
 
   def update

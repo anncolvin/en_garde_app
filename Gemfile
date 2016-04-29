@@ -25,7 +25,6 @@ gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'ma
 
 group :development, :test do
   gem 'byebug'
-  gem "dotenv-rails"
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara-rails'
@@ -50,7 +49,6 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'database_cleaner'
   gem "vcr"
   gem "webmock"
   gem 'poltergeist'

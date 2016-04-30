@@ -1,82 +1,35 @@
-# require 'rails_helper'
-#
-# feature "user adds a new fencer page" do
-#   let!(:user1) { FactoryGirl.create(:user) }
-#
-#   scenario 'user successfully adds a fencer' do
-#     visit root_path
-#
-#     sign_in(user1)
-#
-#     click_link "Add New Fencer"
-#     fill_in "Name", with: "Booky"
-#     fill_in "Address", with: "102 Main Street"
-#     fill_in "City", with: "Cambridge"
-#     select "Massachusetts", from: "State"
-#     fill_in "Zip Code", with: "99999"
-#     click_button "Submit Fencer"
-#
-#     expect(page).to have_content "Booky"
-#   end
-#
-#   scenario 'user tries to submit a blank form' do
-#     visit root_path
-#
-#     sign_in(user1)
-#
-#     click_link "Add New Fencer"
-#
-#     click_button "Submit Fencer"
-#
-#     expect(page).to have_content "Name can't be blank"
-#     expect(page).to have_content "Address can't be blank"
-#     expect(page).to have_content "City can't be blank"
-#     expect(page).to have_content "Zip code is not a number"
-#     expect(page).to have_content
-#     "Zip code is the wrong length (should be 5 characters)"
-#   end
-#
-#   scenario 'user tries to submit an incomplete form' do
-#     visit root_path
-#
-#     sign_in(user1)
-#
-#     click_link "Add New Fencer"
-#
-#     fill_in "Name", with: "Booky"
-#     fill_in "City", with: "Cambridge"
-#     select "Massachusetts", from: "State"
-#     fill_in "Zip Code", with: "99999"
-#     click_button "Submit Fencer"
-#
-#     expect(page).to have_content "Address can't be blank"
-#   end
-#
-#   scenario 'user tries to submit an invalid zip' do
-#     visit root_path
-#
-#     sign_in(user1)
-#
-#     click_link "Add New Fencer"
-#
-#     fill_in "Name", with: "Booky"
-#     fill_in "Address", with: "102 Main Street"
-#     fill_in "City", with: "Cambridge"
-#     select "Massachusetts", from: "State"
-#     fill_in "Zip Code", with: "9999"
-#     click_button "Submit Fencer"
-#
-#     expect(page).to have_content "Zip code is the wrong length"
-#   end
-#
-#   scenario 'user is not signed in and tries to add a fencer' do
-#     visit root_path
-#
-#     click_link "Add New Fencer"
-#
-#     expect(page).to have_content "You must be signed in"
-#     expect(page).to have_content "Email"
-#     expect(page).to have_content "Password"
-#     expect(page).to have_content "Password confirmation"
-#   end
-# end
+require 'rails_helper'
+
+feature "user adds a new fencer page" do
+  let!(:user1) { FactoryGirl.create(:user) }
+end
+
+  scenario 'user successfully adds a fencer' do
+    visit fencers_path
+  end
+
+    sign_in(user1)
+
+    fill_in "name", with: "Inara"
+    fill_in "dominant_hand", with: "Right"
+    fill_in "letter_rating", with: "U"
+
+    expect(page).to have_content "Inara"
+  end
+end
+
+  scenario 'user tries to submit a blank form' do
+    visit root_path
+end
+    sign_in(user1)
+
+    click_link "Add New Fencer"
+
+    click_button "Submit Fencer"
+
+    expect(page).to have_content "Name can't be blank"
+  end
+  end
+  end
+  end
+end

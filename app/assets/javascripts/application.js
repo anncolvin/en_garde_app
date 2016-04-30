@@ -10,15 +10,37 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require foundation
-
 //= require jquery
 //= require jquery_ujs
-//=require highcharts
-//=require highcharts/modules/drilldown
-//=require highcharts/highcharts-more
+//= require foundation
+//= require_tree .
+//= require highcharts
+//= require highcharts/highcharts-more
 
 //= require fencers
 
-
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function() {
+  $("#point_reason_category").on("change", function(event) {
+    event.preventDefault();
+
+    var reasonsByCategory = {
+      distance: ["Too Close", "Too Far"],
+      timing: ["Hesitated", "Reaction Time"],
+      technique: ["Missed Parry", "Stance Exposed Target"]
+    };
+
+    var selectedCategory = $(this.selectedOptions).val().toLowerCase();
+    var selectedReasonsList = reasonsByCategory[selectedCategory];
+    var reasonDropdown = $("#point_reason");
+    var dropdownHeader = $('<option>', { value: "Reason", text: "Reason" });
+
+    reasonDropdown.empty();
+    reasonDropdown.append(dropdownHeader);
+
+    $.each(selectedReasonsList, function(i, item) {
+      reasonDropdown.append($('<option>', { value: item, text: item }));
+    });
+  });
+});

@@ -12,7 +12,8 @@ fencer1 = Fencer.find_or_create_by(
   name: "Alicia",
   dominant_hand: "Right",
   letter_rating: "U",
-  profile_photo: "http://www.absolutefencing.com.sg/wordpress/wp-content/uploads/2012/12/Nicolette-Profile.jpg",
+  category: "DIV3",
+  profile_photo: "uploads/engardeappfencingimages/fencer1.jpeg",
   notes: "Not interested in competing. All around great fencer with strong commitment to training. Working on becoming more aggressive and not hesitating.",
   user: user1
 
@@ -22,6 +23,7 @@ fencer2 = Fencer.find_or_create_by(
 name: "Ann",
 dominant_hand: "Right",
 letter_rating: "U",
+profile_photo: "uploads/engardeappfencingimages/fencer2.jpeg",
 notes: "Significant progress on her technique, especially parries. Slow reaction time. Occassionally hesitates.",
 user: user1
 )
@@ -29,7 +31,7 @@ user: user1
 fencer3 = Fencer.find_or_create_by(
 name: "Ernest",
 dominant_hand: "Left",
-profile_photo: "http://vivofencingclub.com/wp-content/uploads/Aaron-larger-file-e1379030339588.jpeg",
+profile_photo: "uploads/engardeappfencingimages/fencer3.jpeg",
 letter_rating: "C",
 notes: "Ernest is very interested in continuing to advance through qualifying tournaments. Expect that he will compete in Nationals this year.",
 user: user1

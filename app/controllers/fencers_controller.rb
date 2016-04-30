@@ -1,6 +1,6 @@
 class FencersController < ApplicationController
   def index
-    @fencers = Fencer.all
+    @fencers = Fencer.where(user: current_user)
   end
 
   def show

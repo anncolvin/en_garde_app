@@ -1,5 +1,6 @@
 class FencersController < ApplicationController
   def index
+    puts "Jelly"
     @fencers = Fencer.where(user: current_user)
   end
 

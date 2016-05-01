@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    puts "Hello, logs!"
+    puts "Peanut Butter"
     if current_user
       redirect_to fencers_path
     end

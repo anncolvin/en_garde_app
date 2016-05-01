@@ -1,6 +1,14 @@
 class BoutsController < ApplicationController
+
+  def new
+  if current_user
+      @qualifying_collection = Bout::QUALIFYING
+      @bout = Bout.new
+  end
+  end
+
   def create
-    @fencer = fencer.find(params[:fencer_id])
+    @fencer = fencer.find(params[:fencer])
     @bouts = @fencer.bouts
     @bout = bout.new(bout_params)
     if current_user && @bout.save

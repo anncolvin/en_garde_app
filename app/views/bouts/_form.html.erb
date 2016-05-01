@@ -1,33 +1,13 @@
-<%= form_for @fencer do |f| %>
-  <div class="required_field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-<%= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
+<%= form_for @bout do |f| %>
 
   <div class="non_required_field">
-    <%= f.label :dominant_hand %>
-    <%= f.text_field :dominant_hand %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
   </div>
 
   <div class="non_required_field">
-    <%= f.label :category %>
-    <%= f.select(:category, options_for_select(@categories_collection), { :include_blank=>true, :prompt =>  'Category' }) %>
-  </div>
-
-  <div class="non_required_field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="required_field">
-    <%= f.label :letter_rating, "Letter Rating" %>
-    <%= f.text_field :letter_rating %>
-  </div>
-
-  <div class="non_required_field">
-    <%= f.file_field :profile_photo %>
+    <%= f.label :qualifying %>
+    <%= f.text_field :qualifying %>
   </div>
 
   <div class="non_required_field">

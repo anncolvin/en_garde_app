@@ -1,4 +1,5 @@
-<%= form_for @bout do |f| %>
+
+<%= form_for [@fencer, @bout] do |f| %>
 
   <div class="non_required_field">
     <%= f.label :location %>
@@ -7,7 +8,7 @@
 
   <div class="non_required_field">
     <%= f.label :qualifying %>
-    <%= f.text_field :qualifying %>
+    <%= f.select(:qualifying, options_for_select(@qualifying_collection), { :include_blank=>true}) %>
   </div>
 
   <div class="non_required_field">
@@ -15,8 +16,8 @@
     <%= f.text_area :notes %>
   </div>
 
-  <div>
-    <%= f.submit "Submit Bout" %>
+  <div class = "actions">
+    <%= f.submit "Submit Match" %>
   </div>
 
 <% end %>

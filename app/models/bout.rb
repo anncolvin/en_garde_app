@@ -3,6 +3,7 @@ class Bout < ActiveRecord::Base
     ["Yes"],
     ["No"]
   ].freeze
+
   belongs_to :fencer
   validates :fencer, presence: true
 

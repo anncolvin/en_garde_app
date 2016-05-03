@@ -1,26 +1,32 @@
 class BoutsController < ApplicationController
+  def index
+    puts "Jelly"
+    @bouts = Bout.where(fencer: Fencer.find(params[:fencer_id]))
+  end
+
+  def show
+  @bout = Bout.find(params[:id])
+  @fencer = Fencer.find(@bout.fencer_id)
+  end
 
   def new
-  if current_user
-      @qualifying_collection = Bout::QUALIFYING
-      @bout = Bout.new
-  end
+    @qualifying_collection = Bout::QUALIFYING
+    @bout = Bout.new
+    @fencer = Fencer.find(params[:fencer_id])
   end
 
   def create
-    @fencer = fencer.find(params[:fencer])
-    @bouts = @fencer.bouts
-    @bout = bout.new(bout_params)
-    if current_user && @bout.save
-      flash[:notice] = "bout successfully added!"
-    elsif current_user
-      flash[:error] = @bout.errors.full_messages.join", "
-      @qualifying_collection = Bout::QUALIFYING
-    else
-        @qualifying_collection = Bout::QUALIFYING
-      flash[:error] = "You must be signed in to add bouts!"
+    @qualifying_collection = Bout::QUALIFYING
+    @fencer = Fencer.find(params[:fencer_id])
+    @bout = @fencer.bouts.new(bout_params)
+    if @bout.save
+    puts @bout.id
+      flash[:notice] = "Bout successfully added!"
+    redirect_to fencer_bout_path(@fencer.id, @bout.id)
+  else
+    flash[:error] = @bout.errors.full_messages.join", "
+    render 'new'
     end
-    redirect_to fencer_path(@fencer)
   end
 
   def edit
@@ -81,8 +87,9 @@ class BoutsController < ApplicationController
   def bout_params
     params.require(:bout).permit(
     :location,
+    :fencer_id,
     :qualifying,
     :notes,
-    ).merge(fencer: @fencer, user: current_user)
+    )
   end
 end

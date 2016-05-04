@@ -4,6 +4,7 @@ class Bout < ActiveRecord::Base
     ["No"]
   ].freeze
 
+  has_many :points
   belongs_to :fencer
   validates :fencer, presence: true
 

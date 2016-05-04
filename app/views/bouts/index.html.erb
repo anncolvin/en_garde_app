@@ -1,9 +1,22 @@
-<% @bouts.each do | b |%>
-  <div class="small-6 medium-4 large-2 end columns media-object">
-    <%= b.location %>
-    <%= b.created_at %>
+<div id="container" style="width:100%; height:400px;"></div>
 
+<!-- <div class="medium-15 large-8 columns"> -->
+ <article class="stats-center-card">
+<div class="card-content">
+<p class="post-author">
+  <div class="small-12 columns" id="bout_created">
   </div>
-  <% end %>
 
-  <%= link_to "Add Point",  new_bout_point_path(:bout) %>
+</div>
+<br>
+<% @bouts.each do | b |%>
+        <div>Bout: <%= b.location %>, Qualifying: <%= b.qualifying %></div>
+
+
+<% end %>
+</p>
+   <div class="submenu menu vertical">
+
+
+
+   </div>

@@ -7,12 +7,7 @@
 
   <div class="non_required_field">
     <%= f.label :reason_category %>
-    <%= f.select(:reason_category, options_for_select(@reasoncategories_collection), { :include_blank=>true, :prompt =>  'Reason Category' }) %>
-  </div>
-  
-  <div class="non_required_field">
-    <%= f.label :reason %>
-    <%= f.select(:reason, options_for_select(@reasons_collection), { :include_blank=>true, :prompt =>  'Reason' }) %>
+    <%= f.select(:reason_category, options_for_select(@reasoncategories_collection), { :include_blank=>true}) %>
   </div>
 
   <div>

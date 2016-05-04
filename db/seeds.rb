@@ -48,7 +48,7 @@ user: user1
 )
 
 fencer5 = Fencer.find_or_create_by(
-name: "Nehal",
+name: "Tammy",
 dominant_hand: "Right",
 letter_rating: "D",
 category: "Y14",
@@ -92,7 +92,7 @@ user: user1
 )
 
 fencer10 = Fencer.find_or_create_by(
-name: "Jenny",
+name: "Rich",
 dominant_hand: "Right",
 letter_rating: "U",
 notes: "New fencer that expressed an interest in private lessons.",
@@ -100,52 +100,60 @@ user: user1
 )
 
 fencer11 = Fencer.find_or_create_by(
-name: "Carson",
+name: "Ellen",
 dominant_hand: "Right",
 letter_rating: "U",
-notes: "Carson needs to keep working on fleching.",
+notes: "Ellen needs to keep working on fleching.",
 user: user1
 )
 
-# f3_bout1 = Bout.find_or_create_by()
-# fencer: fencer3,
-# location: "Pomme de Terre",
-# qualifying: "Yes",
-# notes: "This was a heartbreaker but I was really proud of his fencing."
-#
-# f3_bout2 = Bout.find_or_create_by()
-# fencer: fencer3,
-# location: "Pomme de Terre",
-# qualifying: "Yes"
-#
-# f3_bout3 = Bout.find_or_create_by()
-# fencer: fencer3,
-# location: "Pomme de Terre",
-# qualifying: "Yes",
-# # notes: "Nicely done! His work on parrying really paid off!"
-#
-# f3_bout4 = Bout.find_or_create_by()
-# fencer_id: fencer3
+f3bout1 = Bout.find_or_create_by(
+location: "Pomme de Terre",
+qualifying: "Yes",
+notes: "This was a heartbreaker but I was really proud of his fencing.",
+fencer: fencer3
+)
 
-# f3_bout5 = Bout.find_or_create_by()
+f3bout2 = Bout.find_or_create_by(
+location: "Pomme de Terre",
+qualifying: "Yes",
+fencer: fencer3
+)
+
+f3bout3 = Bout.find_or_create_by(
+location: "Pomme de Terre",
+qualifying: "Yes",
+notes: "Nicely done! His work on parrying really paid off!",
+fencer: fencer3
+)
+
+f3bout4 = Bout.find_or_create_by(
+fencer_id: fencer3
+)
+
+f3bout5 = Bout.find_or_create_by(
+fencer: fencer3
+)
+
+f3bout6 = Bout.find_or_create_by(
+fencer: fencer3
+)
+
+f3bout7 = Bout.find_or_create_by(
+fencer: fencer3
+)
+
+f3bout8 = Bout.find_or_create_by(
+fencer: fencer3
+)
+
+# f3bout9 = Bout.find_or_create_by()
 # fencer: fencer3
 #
-# f3_bout6 = Bout.find_or_create_by()
+# f3bout10 = Bout.find_or_create_by()
 # fencer: fencer3
 #
-# f3_bout7 = Bout.find_or_create_by()
-# fencer: fencer3
-#
-# f3_bout8 = Bout.find_or_create_by()
-# fencer: fencer3
-#
-# f3_bout9 = Bout.find_or_create_by()
-# fencer: fencer3
-#
-# f3_bout10 = Bout.find_or_create_by()
-# fencer: fencer3
-#
-# f3_bout11 = Bout.find_or_create_by()
+# f3bout11 = Bout.find_or_create_by()
 # fencer: fencer3
 #
 # f3_bout12 = Bout.find_or_create_by()

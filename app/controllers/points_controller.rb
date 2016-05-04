@@ -4,12 +4,13 @@ class PointsController < ApplicationController
   end
 
   def show
-    @bout = Bout.find(params[:id])
+    @bout = Bout.find(params[:bout_id])
     @points = @bout.points.order(:count)
   end
 
   def new
     @point = Point.new
+    @bout = Bout.find(params[:bout_id])
     @statuses_collection = Point::STATUSES
     @reasoncategories_collection = Point::REASONCATEGORIES
   end
@@ -17,12 +18,13 @@ class PointsController < ApplicationController
 
   def create
     @bout = Bout.find(params[:bout_id])
-    @point = Point.new(point_params)
+    @point = @bout.points.new(point_params)
     @statuses_collection = Point::STATUSES
     @reasoncategories_collection = Point::REASONCATEGORIES
       if @point.save
+        puts @point.id
         flash[:notice] = "Point successfully added!"
-        redirect_to point_path(@point)
+      redirect_to bout_path(params[:bout_id])
       else
         flash[:error] = @point.errors.full_messages.join", "
         render :new
@@ -63,6 +65,6 @@ class PointsController < ApplicationController
     :status,
     :reason_category,
     :reason,
-    ).merge(user: current_user)
+    )
   end
 end

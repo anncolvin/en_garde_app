@@ -41,6 +41,7 @@
           <%= link_to "Add Match", new_fencer_bout_path(@fencer)%>
         <%= link_to "Edit Fencer", edit_user_fencer_path(current_user, @fencer)%>
 <%= link_to "Delete Fencer", @fencer, method: :delete %>
+     <%= link_to "Performance", fencer_bouts_path(@fencer)%>
           </div>
           </div>
       </p>

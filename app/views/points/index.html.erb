@@ -1,19 +1,9 @@
-<div class="small-12 columns fencers-index">
-  <% @fencers.each do | fencer |%>
-  <div class="small-12 medium-6 large-4 end columns media-object">
-    <div class="media-object-section">
-      <a href="/fencers/<%= fencer.id %>"> <img class="thumbnail" src="<%= fencer.avatar %>" style="width: 125px; height: 125px"></a>
-    </div>
-    <div class="media-object-section">
-      <h5><%= link_to fencer.name, fencer_path(fencer) %></h5>
-    </div>
+<% @points.each do | p |%>
+  <div class="small-6 medium-4 large-2 end columns media-object">
+    <%= p.status %>
+    <%= p.reason_category %>
+
   </div>
   <% end %>
-  <div class="">
 
-
-  <%= link_to "Add New Fencer", new_fencer_path, class: "button purple-button" %>
-    </div>
-    <hr>
-
-</div>
+  <%= link_to "Add Point",  new_bout_point_path(:bout) %>

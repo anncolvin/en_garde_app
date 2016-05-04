@@ -1,6 +1,5 @@
 class BoutsController < ApplicationController
-  def index
-    puts "Jelly"
+  def index 
     @bouts = Bout.where(fencer: Fencer.find(params[:fencer_id]))
   end
 

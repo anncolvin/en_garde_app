@@ -9,7 +9,7 @@
   </div>
   <div class="medium-15 large-8 columns">
     <article class="stats-card">
-      <img src="https://s3.amazonaws.com/engardeappfencingimages/banner.jpeg" style="width: 3000px; height: 150px"%></a>
+      <img src="https://s3.amazonaws.com/engardeappfencingimages/banner.jpeg" style="width: 3500px; height: 150px"%></a>
       <div class="card-content">
       <p class="post-author">
 
@@ -37,10 +37,11 @@
           <br>
             <div class="submenu menu vertical">
 
-          <%= link_to "Back to Fencers", fencers_path%>
+          <%= link_to "All Fencers", fencers_path%>
           <%= link_to "Add Match", new_fencer_bout_path(@fencer)%>
-        <%= link_to "Edit Fencer", edit_user_fencer_path(current_user, @fencer)%>
-<%= link_to "Delete Fencer", @fencer, method: :delete %>
+        <%= link_to "Edit", edit_user_fencer_path(current_user, @fencer)%>
+        <%= link_to "Delete Fencer", @fencer, method: :delete %>
+     <%= link_to "Match History", fencer_bouts_path(@fencer)%>
      <%= link_to "Performance", fencer_bouts_path(@fencer)%>
           </div>
           </div>

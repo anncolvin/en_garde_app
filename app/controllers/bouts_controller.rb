@@ -1,6 +1,7 @@
 class BoutsController < ApplicationController
-  def index 
-    @bouts = Bout.where(fencer: Fencer.find(params[:fencer_id]))
+  def index
+    @fencer = Fencer.find(params[:fencer_id])
+    @bouts = Bout.where(fencer: @fencer)
   end
 
   def show

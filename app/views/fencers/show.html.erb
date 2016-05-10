@@ -37,11 +37,12 @@
           <br>
             <div class="submenu menu vertical">
 
-          <%= link_to "Back to Fencers", fencers_path%>
-          <%= link_to "Add Match", new_fencer_bout_path(@fencer)%>
-        <%= link_to "Edit Fencer", edit_user_fencer_path(current_user, @fencer)%>
-<%= link_to "Delete Fencer", @fencer, method: :delete %>
-     <%= link_to "Performance", fencer_bouts_path(@fencer)%>
+      <%= link_to "All Fencers", fencers_path%>
+      <%= link_to "Add Match", new_fencer_bout_path(@fencer)%>
+      <%= link_to "Edit Info", edit_user_fencer_path(current_user, @fencer)%>
+      <%= link_to "Delete Fencer", @fencer, method: :delete %>
+      <%= link_to "Matches", fencer_bouts_path(@fencer)%>
+      <%= link_to "Performance", performances_path(@fencer)%>
           </div>
           </div>
       </p>

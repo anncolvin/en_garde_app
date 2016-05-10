@@ -17,9 +17,14 @@ class Point < ActiveRecord::Base
   REASONS_HASH = {
     distance: [
       ["Too Close"],
-      ["Too Far"],
+      ["Too Far"]
+    ], timing: [
+      ["Reaction Time"],
+      ["Hesitated"]
+    ], technique: [
+      ["Reaction Time"],
+      ["Hesitated"]
     ]
-
   }
 
   REASONS = [

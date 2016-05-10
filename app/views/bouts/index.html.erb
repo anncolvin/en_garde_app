@@ -1,23 +1,24 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e7791543c2a1a936c8f7afaf3cb2565c012b1fb
 <!-- <div class="medium-15 large-8 columns"> -->
  <article class="stats-center-card">
+   <img src="https://s3.amazonaws.com/engardeappfencingimages/banner.jpeg" style="width: 2000px; height: 150px"%></a>
+
 <div class="card-content">
 <p class="post-author">
-  <div class="small-12 columns" id="bout_created">
-  </div>
-
-</div>
-<br>
-<% @bouts.each do | b |%>
-        <div>Bout: <%= b.location %>, Qualifying: <%= b.qualifying %></div>
-
-
+<div class="small-12 columns" id="bout_list">
+  <% @bouts.each do | b |%>
+<div>Location: <%= b.location %>, Qualifying: <%= b.qualifying %>, Match Created:
+  <%= b.created_at %>
 <% end %>
-</p>
+</div>
    <div class="submenu menu vertical">
      <%= link_to "Back to Fencer", fencer_path(@fencer.id)%>
      <%= link_to "Back to All Fencers", fencers_path%>
      <%= link_to "Performance", fencer_bouts_path(@fencer)%>
-
-
    </div>
+</article>
+</p>
+</div>

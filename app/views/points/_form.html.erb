@@ -10,6 +10,11 @@
     <%= f.select(:reason_category, options_for_select(@reasoncategories_collection), { :include_blank=>true}) %>
   </div>
 
+  <div class="non_required_field">
+    <%= f.label :reason %>
+    <%= f.select(:reason, options_for_select(@reasons_collection), { :include_blank=>true}) %>
+  </div>
+
   <div>
     <%= f.submit "Submit Point" %>
   </div>

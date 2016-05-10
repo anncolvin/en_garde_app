@@ -13,6 +13,7 @@ class PointsController < ApplicationController
     @bout = Bout.find(params[:bout_id])
     @statuses_collection = Point::STATUSES
     @reasoncategories_collection = Point::REASONCATEGORIES
+    @reasons_collection = Point::REASONS
   end
 
 
@@ -21,6 +22,7 @@ class PointsController < ApplicationController
     @point = @bout.points.new(point_params)
     @statuses_collection = Point::STATUSES
     @reasoncategories_collection = Point::REASONCATEGORIES
+    @reasons_collection = Point::REASONS
       if @point.save
         puts @point.id
         flash[:notice] = "Point successfully added!"

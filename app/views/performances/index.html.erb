@@ -1,0 +1,16 @@
+<div id="container" style="width:100%; height:400px;"></div>
+
+<ul>
+  <% @points.each do |point| %>
+    <li><%= point.reason_category %>-<%= point.reason_category.count %></li>
+  <% end %>
+</ul>
+
+<div class="medium-15 large-8 columns">
+
+   <div class="submenu menu vertical">
+  <%= link_to "Back to Fencer Profile", fencer_path(@fencer.id)%>
+  <%= link_to "Back to All Fencers", fencers_path%>
+  <%= link_to "Matches", fencer_bouts_path(@fencer)%>
+</div>
+</div>

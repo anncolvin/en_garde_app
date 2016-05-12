@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   sequence :name do |n|
-    "Fencer Name #{n}"
+    "name#{n}"
   end
 
   factory :fencer do

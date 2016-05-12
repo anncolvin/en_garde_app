@@ -8,12 +8,11 @@ Rails.application.routes.draw do
 
   resources :fencers do
     resources :bouts
+    resources :performances
   end
 
   resources :bouts do
     resources :points
   end
 
-  resources :performances
-
-  end
+end

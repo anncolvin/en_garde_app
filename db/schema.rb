@@ -23,9 +23,8 @@ ActiveRecord::Schema.define(version: 20160427161722) do
     t.text     "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["fencer_id"], name: "index_bouts_on_fencer_id", using: :btree
   end
-
-  add_index "bouts", ["fencer_id"], name: "index_bouts_on_fencer_id", using: :btree
 
   create_table "fencers", force: :cascade do |t|
     t.integer "user_id",       null: false
@@ -35,9 +34,8 @@ ActiveRecord::Schema.define(version: 20160427161722) do
     t.string  "letter_rating"
     t.text    "notes"
     t.string  "profile_photo"
+    t.index ["user_id"], name: "index_fencers_on_user_id", using: :btree
   end
-
-  add_index "fencers", ["user_id"], name: "index_fencers_on_user_id", using: :btree
 
   create_table "points", force: :cascade do |t|
     t.integer "bout_id",         null: false
@@ -61,9 +59,8 @@ ActiveRecord::Schema.define(version: 20160427161722) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

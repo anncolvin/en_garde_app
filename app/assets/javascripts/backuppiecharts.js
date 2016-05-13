@@ -1,3 +1,10 @@
+<ul>
+  <% @fencer.bouts.points.each do | p |%>
+      <li><%= p.reason %>-<%= p.reason.count %>
+    <% end %>
+</ul>
+
+
 $(function () {
   var reasons = ["Poor Extention", "Too Close", "Missed Parry"];
   var reasons_count = [20,3,7];

@@ -1,6 +1,7 @@
 class PerformancesController < ApplicationController
   def index
     @fencer = Fencer.find(params[:fencer_id])
+    @bouts = Bout.all
     @points = Point.all
     respond_to do |format|
       format.html

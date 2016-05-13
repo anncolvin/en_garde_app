@@ -1,5 +1,11 @@
 <div id="container" style="width:100%; height:400px;"></div>
-
+<ul>
+  <% @fencer.bouts.each do | b |%>
+  <% @points.each do | p |%>
+      <li><%= p.reason %>
+    <% end %>
+    <% end %>
+</ul>
 <div class="medium-15 large-8 columns">
 
    <div class="submenu menu vertical">

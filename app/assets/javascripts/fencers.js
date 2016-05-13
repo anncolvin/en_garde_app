@@ -1,7 +1,24 @@
 $(function () {
 
-  var reasons = ["Poor Extention", "Too Close", "Missed Parry"];
-  var reasons_count = [20,3,7];
+  var reasons = [
+  ["Too Close"],
+  ["Too Far"],
+  ["Reaction Time"],
+  ["Hesitated"],
+  ["Did Not Parry"],
+  ["Did Not Attack"],
+  ["Failed Attack"],
+  ["Lunge"],
+  ["Advance"],
+  ["Retreat"],
+  ["Fleche"],
+  ["Unsuccessful Parry"],
+  ["Stance Exposed Target"],
+  ["Riposte"],
+  ["Disengage"]
+];
+
+  var reasons_count = [20,3,7,8,9,1,5,7,0,0,8,9,1,5,7];
 
 $.ajax({
   method: "GET",
@@ -16,22 +33,22 @@ $.ajax({
             type: 'bar'
         },
         title: {
-            text: 'Fruit Consumption'
+            text: 'Count of Points by Reason'
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: reasons
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
+                text: 'Reason Count'
             }
         },
         series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
+            name: 'Fencer1',
+            data: reasons_count
         }, {
-            name: 'John',
-            data: [5, 7, 3]
+            name: 'Fencer2',
+            data: [5, 7, 3,5, 7, 12, 7, 15, 7, 1, 7, 18]
         }]
     });
 });

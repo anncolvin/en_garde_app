@@ -28,7 +28,7 @@ $(document).ready(function() {
     var reasonsByCategory = {
       distance: ["Too Close", "Too Far"],
       timing: ["Hesitated", "Reaction Time"],
-      technique: ["Missed Parry", "Stance Exposed Target"]
+      technique:["Did Not Parry","Did Not Attack","Failed Attack","Lunge","Advance","Retreat","Fleche","Unsuccessful Parry","Stance Exposed Target","Riposte","Disengage"]
     };
 
     var selectedCategory = $(this.selectedOptions).val().toLowerCase();

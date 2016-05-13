@@ -22,29 +22,37 @@ class Point < ActiveRecord::Base
       ["Reaction Time"],
       ["Hesitated"]
     ], technique: [
-      ["Reaction Time"],
-      ["Hesitated"]
+      ["Did Not Parry"],
+      ["Did Not Attack"],
+      ["Failed Attack"],
+      ["Lunge"],
+      ["Advance"],
+      ["Retreat"],
+      ["Fleche"],
+      ["Unsuccessful Parry"],
+      ["Stance Exposed Target"],
+      ["Riposte"],
+      ["Disengage"]
     ]
   }
 
   REASONS = [
   ["Too Close"],
   ["Too Far"],
-  ["Did Not Parry"],
   ["Reaction Time"],
   ["Hesitated"],
+  ["Did Not Parry"],
+  ["Did Not Attack"],
+  ["Failed Attack"],
   ["Lunge"],
+  ["Advance"],
+  ["Retreat"],
   ["Fleche"],
   ["Unsuccessful Parry"],
   ["Stance Exposed Target"],
-  ["1"],
-  ["2"],
-  ["3"],
-  ["4"],
-  ["5"],
-  ["6"],
-  ["7"],
-  ["8"]
+  ["Riposte"],
+  ["Disengage"]
+
 
   ].freeze
 

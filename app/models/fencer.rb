@@ -1,6 +1,5 @@
 class Fencer < ActiveRecord::Base
 
-  mount_uploader :profile_photo, ProfilePhotoUploader
   has_many :bouts, dependent: :destroy
   belongs_to :user
 

@@ -62,7 +62,6 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'FontAwesome';
 $body-antialiased: true;
 $global-margin: .0;
 $global-padding: .5rem;
@@ -102,7 +101,6 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -234,7 +232,7 @@ $breadcrumbs-item-slash: true;
 // ----------
 
 $button-padding: .75em;
-$color: black;
+$color: #333399;
 
 
 // $button-margin: 0 0 $global-margin 0;

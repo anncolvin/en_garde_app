@@ -1,15 +1,72 @@
-<div id="container" style="width:100%; height:400px;"></div>
-<ul>
-  <% @fencer.bouts.each do | b |%>
-  <% @points.each do | p |%>
-      <li><%= p.reason %>
-    <% end %>
-    <% end %>
-</ul>
-<div class="medium-15 large-8 columns">
 
-   <div class="submenu menu vertical">
-     <%= link_to "Back to Fencer", fencer_path(@fencer.id)%>
-     <%= link_to "Back to All Fencers", fencers_path%>
+
+<div class="medium-15 large-8 columns">
+  <canvas id="cvs" width="450" height="350">
+      [No canvas support]
+  </canvas>
+
 </div>
+
+<script src="/assets/RGraph.common.core.js"></script>
+<script src="/assets/RGraph.common.dynamic.js"></script>
+<script src="/assets/RGraph.common.tooltips.js"></script>
+<script src="/assets/RGraph.common.effects.js"></script>
+<script src="/assets/RGraph.pie.js"></script>
+<script src="/assets/RGraph.common.core.js"></script>
+<script src="/assets/RGraph.common.key.js"></script>
+<script src="/assets/RGraph.bar.js"></script>
+
+<script>
+
+    RGraph.AJAX.getJSON('/fencers/2/performances.json', function (json)
+    {
+        dataArray = json;
+        newDataArray = [];
+
+        for (var key in dataArray) {
+          if (Object.prototype.hasOwnProperty.call(dataArray, key)) {
+              var val = dataArray[key];
+
+              newDataArray.push(val);
+          }
+        }
+
+        var pie = new RGraph.Pie({
+            id: 'cvs',
+            data: newDataArray,
+            options: {
+                tooltips: Object.keys(dataArray),
+                shadow: false,
+                key: Object.keys(dataArray),
+                keyPositionGraphBoxed: false,
+                colors: ['red','gray','green','blue','pink','yellow','black','orange','cyan','purple'],
+                centerx: 175,
+                textAccessible: true
+            }
+        }).draw();
+    });
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="submenu menu vertical">
+  <%= link_to "Back to Fencer", fencer_path(@fencer.id)%>
+  <%= link_to "Back to All Fencers", fencers_path%>
 </div>

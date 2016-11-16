@@ -1,5 +1,6 @@
 class Point < ActiveRecord::Base
   belongs_to :bout
+
   STATUSES = [
   ["Won"],
   ["Lost"],
@@ -17,7 +18,8 @@ class Point < ActiveRecord::Base
   REASONS_HASH = {
     distance: [
       ["Too Close"],
-      ["Too Far"]
+      ["Too Far"],
+      ["Kept Distance"]
     ], timing: [
       ["Reaction Time"],
       ["Hesitated"]
@@ -39,6 +41,7 @@ class Point < ActiveRecord::Base
   REASONS = [
   ["Too Close"],
   ["Too Far"],
+  ["Kept Distance"],
   ["Reaction Time"],
   ["Hesitated"],
   ["Did Not Parry"],

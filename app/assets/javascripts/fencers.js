@@ -1,54 +1,29 @@
-$(function () {
-
-  var reasons = [
-  ["Too Close"],
-  ["Too Far"],
-  ["Reaction Time"],
-  ["Hesitated"],
-  ["Did Not Parry"],
-  ["Did Not Attack"],
-  ["Failed Attack"],
-  ["Lunge"],
-  ["Advance"],
-  ["Retreat"],
-  ["Fleche"],
-  ["Unsuccessful Parry"],
-  ["Stance Exposed Target"],
-  ["Riposte"],
-  ["Disengage"]
-];
-
-  var reasons_count = [20,3,7,8,9,1,5,7,0,0,8,9,1,5,7];
-
-$.ajax({
-  method: "GET",
-  url: "/points"
-}).done(function(data){
+// // <script>
+//     RGraph.AJAX.getJSON('/fencers/2/performances.json', function (json)
+//     {
+//         var pie = new RGraph.Pie({
+//             id: 'cvs',
+//             data: json.data,
+//             options: {
+//                 tooltips: json.labels,
+//                 shadow: false,
+//                 key: json.labels,
+//                 keyPositionGraphBoxed: false,
+//                 colors: ['red','gray','#afa','blue','pink','yellow','black','orange','cyan','purple'],
+//                 centerx: 175,
+//                 textAccessible: true
+//             }
+//         }).draw();
+//     });
 
 
-});
-
-    $('#container').highcharts({
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Count of Points by Reason'
-        },
-        xAxis: {
-            categories: reasons
-        },
-        yAxis: {
-            title: {
-                text: 'Reason Count'
-            }
-        },
-        series: [{
-            name: 'Fencer1',
-            data: reasons_count
-        }, {
-            name: 'Fencer2',
-            data: [5, 7, 3,5, 7, 12, 7, 15, 7, 1, 7, 18]
-        }]
-    });
-});
+// $(function () {
+// $.ajax({
+//   method: "GET",
+//   url: "/fencers/2/performances",
+//   dataType: "json"
+//
+// });
+// });
+//
+// </script>

@@ -17,9 +17,8 @@
 <script src="/assets/RGraph.bar.js"></script>
 
 <script>
-    var id = 2;
-    // var id = Fencer.find(params[:fencer_id]);
-    // var id = Fencer.where(user: current_user);
+    var id = <%= @fencer.id %>
+
     RGraph.AJAX.getJSON('/fencers/' + id + '/performances.json', function (json)
     // RGraph.AJAX.getJSON('/fencers/2/performances.json', function (json)
     {

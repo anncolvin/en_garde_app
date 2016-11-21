@@ -1,7 +1,7 @@
 
 
 <div class="medium-15 large-8 columns">
-  <canvas id="cvs" width="450" height="350">
+  <canvas id="cvs" width="525" height="350">
       [No canvas support]
   </canvas>
 
@@ -17,8 +17,11 @@
 <script src="/assets/RGraph.bar.js"></script>
 
 <script>
-
-    RGraph.AJAX.getJSON('/fencers/2/performances.json', function (json)
+    var id = 2;
+    // var id = Fencer.find(params[:fencer_id]);
+    // var id = Fencer.where(user: current_user);
+    RGraph.AJAX.getJSON('/fencers/' + id + '/performances.json', function (json)
+    // RGraph.AJAX.getJSON('/fencers/2/performances.json', function (json)
     {
         dataArray = json;
         newDataArray = [];
@@ -64,8 +67,6 @@
 <br>
 <br>
 <br>
-
-
 <div class="submenu menu vertical">
   <%= link_to "Back to Fencer", fencer_path(@fencer.id)%>
   <%= link_to "Back to All Fencers", fencers_path%>
